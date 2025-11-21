@@ -44,6 +44,14 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  bool _isPlaying = false;
+
+  void _togglePlayPause() {
+    setState(() {
+      _isPlaying = !_isPlaying;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,27 +72,25 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             IconButton(
-              onPressed: () {
-                null;
-              },
-              icon: Icon(Icons.skip_previous),
-              iconSize: 30.0,
+              onPressed: () {},
+              icon: Icon(Icons.skip_previous_rounded),
+              iconSize: 35.0,
               color: Colors.white,
             ),
             IconButton(
-              onPressed: () {
-                Null;
-              },
-              icon: Icon(Icons.play_arrow),
+              onPressed: _togglePlayPause,
+              icon: Icon(
+                _isPlaying
+                    ? Icons.pause_circle_filled
+                    : Icons.play_circle_filled,
+              ),
               iconSize: 50.0,
               color: Colors.white,
             ),
             IconButton(
-              onPressed: () {
-                null;
-              },
-              icon: Icon(Icons.skip_next),
-              iconSize: 30.0,
+              onPressed: () {},
+              icon: Icon(Icons.skip_next_rounded),
+              iconSize: 35.0,
               color: Colors.white,
             ),
           ],
