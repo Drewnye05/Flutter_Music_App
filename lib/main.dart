@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         ),
         scaffoldBackgroundColor: (Colors.black),
       ),
-      home: const MyHomePage(title: 'The Boys Music'),
+      home: const MyHomePage(title: 'Findify'),
     );
   }
 }
